@@ -32,8 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const musicIcon = document.getElementById('musicIcon');
 
     let isMusicPlaying = false;
+let lastSlideSoundPlayed = false;
 
-    function goToSection(index) {
+function goToSection(index) {
         if (index < 0 || index >= sections.length || isTransitioning) return;
 
         const oldSection = sections[currentSection];
@@ -79,10 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (index === 3) {
-    // Slide 4 (terakhir)
     stopParticles();
     startSparkles();
 
+    if (!lastSlideSoundPlayed) {
+        playSFX();
+        lastSlideSoundPlayed = true;
+    }
+}
     // Mainkan suara hanya di slide terakhir
     playSFX();
 }
