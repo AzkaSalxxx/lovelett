@@ -82,6 +82,7 @@ function goToSection(index) {
             if (index === 3) {
     stopParticles();
     startSparkles();
+    startLoveAnimation();
 
     if (!lastSlideSoundPlayed) {
         playSFX();
@@ -762,8 +763,18 @@ const crtLoveTl = () => {
 
 };
 
-const loveTl = crtLoveTl().play();
-setInterval(() => {loveTl.replay();}, 4300);
+const loveTl = crtLoveTl();
+let loveStarted = false;
+
+function startLoveAnimation() {
+    if (loveStarted) return;
+    loveStarted = true;
+
+    loveTl.play();
+    setInterval(() => {
+        loveTl.replay();
+    }, 4300);
+}
 
 const volume = 0.2;
 el.blup.volume = volume;
