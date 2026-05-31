@@ -90,7 +90,7 @@ function goToSection(index) {
             if (index === 3) {
     stopParticles();
     startSparkles();
-
+    startLoveAnimation();
     if(btnBack){
         btnBack.style.display = "flex";
     }
