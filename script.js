@@ -100,7 +100,6 @@ function goToSection(index) {
         lastSlideSoundPlayed = true;
     }
 }
-   
         }, 200);
     }
 
