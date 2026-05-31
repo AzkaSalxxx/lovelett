@@ -79,10 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (index === 3) {
-                // Slide 4: Stop particles, start sparkle animation
-                stopParticles();
-                startSparkles();
-            }
+    // Slide 4 (terakhir)
+    stopParticles();
+    startSparkles();
+
+    // Mainkan suara hanya di slide terakhir
+    playSFX();
+}
         }, 200);
     }
 
