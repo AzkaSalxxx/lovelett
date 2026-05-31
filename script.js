@@ -117,12 +117,7 @@ function goToSection(index) {
         e.preventDefault();
 
         stopSFX();
-
-        el.blup.pause();
-        el.blup.currentTime = 0;
-
-        el.blop.pause();
-        el.blop.currentTime = 0;
+        stopLoveAnimation();
 
         goToSection(0);
     });
