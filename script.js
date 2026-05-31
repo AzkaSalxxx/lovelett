@@ -106,7 +106,7 @@ function goToSection(index) {
 
    if(btnBack){
     btnBack.addEventListener('click', () => {
-        goToSection(2); // balik ke galeri
+        goToSection(0); // balik ke galeri
     });
 }
     /* =============================================
