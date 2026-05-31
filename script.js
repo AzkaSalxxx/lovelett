@@ -89,7 +89,6 @@ function goToSection(index) {
     }
 }
    
-}
         }, 200);
     }
 
