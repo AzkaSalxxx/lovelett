@@ -356,7 +356,7 @@ document.addEventListener('keydown', (e) => {
     /* =============================================
        6. SPARKLE ANIMATION (SECTION 4)
        ============================================= */
-    const sparkleContainer = document.getElementById('sparkleContainer');
+   const sparkleContainer = document.getElementById('particlesContainer');
     let sparkleInterval = null;
 
     function createSparkle() {
