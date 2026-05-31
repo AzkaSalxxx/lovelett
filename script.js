@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('btn3')
     ];
 
+    const btnBack = document.getElementById('btnBack');
+   
     // Music Control References
     const bgm = document.getElementById('bgm');
     const sfx = document.getElementById('sfx');
@@ -102,6 +104,11 @@ function goToSection(index) {
         }
     });
 
+   if(btnBack){
+    btnBack.addEventListener('click', () => {
+        goToSection(2); // balik ke galeri
+    });
+}
     /* =============================================
        2. AUDIO SYSTEM
        ============================================= */
