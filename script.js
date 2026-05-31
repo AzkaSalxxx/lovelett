@@ -114,7 +114,16 @@ function goToSection(index) {
 
    if(btnBack){
     btnBack.addEventListener('click', () => {
-        goToSection(0); // balik ke galeri
+
+        stopSFX();
+
+        el.blup.pause();
+        el.blup.currentTime = 0;
+
+        el.blop.pause();
+        el.blop.currentTime = 0;
+
+        goToSection(0);
     });
 }
     /* =============================================
