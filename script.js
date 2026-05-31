@@ -794,15 +794,32 @@ const crtLoveTl = () => {
 
 const loveTl = crtLoveTl();
 let loveStarted = false;
+let loveInterval = null;
 
 function startLoveAnimation() {
     if (loveStarted) return;
-    loveStarted = true;
 
+    loveStarted = true;
     loveTl.play();
-    setInterval(() => {
+
+    loveInterval = setInterval(() => {
         loveTl.replay();
     }, 4300);
+}
+
+function stopLoveAnimation() {
+    loveStarted = false;
+
+    if (loveInterval) {
+        clearInterval(loveInterval);
+        loveInterval = null;
+    }
+
+    el.blup.pause();
+    el.blup.currentTime = 0;
+
+    el.blop.pause();
+    el.blop.currentTime = 0;
 }
 
 const volume = 0.2;
