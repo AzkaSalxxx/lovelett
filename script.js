@@ -64,8 +64,8 @@ function goToSection(index) {
         setTimeout(() => {
             newSection.classList.add('active');
             currentSection = index;
-           if(btnBack && index !== 3){
-    btnBack.style.display = "none";
+           if(btnBack){
+    btnBack.style.display = (index === 3) ? "flex" : "none";
 }
 
             // Trigger section-specific logic
@@ -113,7 +113,8 @@ function goToSection(index) {
     });
 
    if(btnBack){
-    btnBack.addEventListener('click', () => {
+    btnBack.addEventListener('click', (e) => {
+        e.preventDefault();
 
         stopSFX();
 
@@ -193,6 +194,9 @@ function goToSection(index) {
         if (!sfx.src && !sfx.querySelector('source')) return;
         sfx.currentTime = 0;
         sfx.play().catch(() => {});
+        function stopSFX() {
+    sfx.pause();
+    sfx.currentTime = 0;
     }
 
     // Music control button click
