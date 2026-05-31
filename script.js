@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const btnBack = document.getElementById('btnBack');
+   if(btnBack){
+    btnBack.style.display = "none";
+}
    
     // Music Control References
     const bgm = document.getElementById('bgm');
@@ -61,6 +64,9 @@ function goToSection(index) {
         setTimeout(() => {
             newSection.classList.add('active');
             currentSection = index;
+           if(btnBack && index !== 3){
+    btnBack.style.display = "none";
+}
 
             // Trigger section-specific logic
             if (index === 1) {
@@ -84,7 +90,10 @@ function goToSection(index) {
             if (index === 3) {
     stopParticles();
     startSparkles();
-    startLoveAnimation();
+
+    if(btnBack){
+        btnBack.style.display = "flex";
+    }
 
     if (!lastSlideSoundPlayed) {
         playSFX();
