@@ -88,8 +88,7 @@ function goToSection(index) {
         lastSlideSoundPlayed = true;
     }
 }
-    // Mainkan suara hanya di slide terakhir
-    playSFX();
+   
 }
         }, 200);
     }
