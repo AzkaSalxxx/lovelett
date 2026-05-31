@@ -194,6 +194,7 @@ function goToSection(index) {
         if (!sfx.src && !sfx.querySelector('source')) return;
         sfx.currentTime = 0;
         sfx.play().catch(() => {});
+    }
         function stopSFX() {
     sfx.pause();
     sfx.currentTime = 0;
