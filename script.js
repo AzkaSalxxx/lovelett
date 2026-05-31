@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (index === 2) {
                 // Slide 3: Play SFX, start particles
-                playSFX();
                 startParticles();
             }
 
