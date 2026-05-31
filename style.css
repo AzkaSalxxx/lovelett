@@ -1878,3 +1878,69 @@ body{
 
     opacity:.85;
 }
+
+.floating-heart{
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 65px;
+    height: 65px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #ff6b9d,
+        #ff3366
+    );
+
+    color: white;
+    font-size: 28px;
+
+    cursor: pointer;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 0 20px rgba(255,51,102,.5),
+        0 0 40px rgba(255,51,102,.3);
+
+    animation:
+        heartBeat 1.5s infinite,
+        floatHeart 3s ease-in-out infinite;
+
+    transition: .3s;
+}
+
+.floating-heart:hover{
+    transform: scale(1.15);
+}
+
+@keyframes heartBeat{
+    0%,100%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.15);
+    }
+    40%{
+        transform: scale(1);
+    }
+    60%{
+        transform: scale(1.2);
+    }
+}
+
+@keyframes floatHeart{
+    0%,100%{
+        translate: 0 0;
+    }
+    50%{
+        translate: 0 -10px;
+    }
+}
